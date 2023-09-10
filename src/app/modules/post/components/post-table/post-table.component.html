@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">User Id</th>
+            <th scope="col">Body</th>
+            <th scope="col">Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let mappedPost of mappedPosts">
+            <th scope="row">{{mappedPost.id}}</th>
+            <td>{{mappedPost.userId}}</td>
+            <td>
+                <div [innerHTML]="mappedPost.body|searchHighlight:searchedWord"></div>
+            </td>
+            <td>   <div [innerHTML]="mappedPost.title|searchHighlight:searchedWord"></div></td>
+        </tr>
+    </tbody>
+</table>

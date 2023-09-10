@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col"> <select class="form-select" aria-label="Default select example" (change)="getFilterValue()"
+                [(ngModel)]="changedFilterValue">
+                <option value="0">Filter</option>
+                <option *ngFor="let userId of userIds" [value]="userId">{{userId}}</option>
+            </select></div>
+        <div class="col">
+
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                [(ngModel)]='changedSearchValue' (keyup)="onChangeSearchValue()">
+
+        </div>
+    </div>
+
+</div>

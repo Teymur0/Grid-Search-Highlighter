@@ -1,0 +1,23 @@
+<nav aria-label="Page navigation example">
+
+    <ul class="pagination justify-content-end">
+        <select aria-label="Default select example" (change)="getCurrentPerPage()" [(ngModel)]="perPage">
+
+          
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+        </select>
+        <li class="page-item ">
+            <button class="page-link" tabindex="-1" (click)="getCurrentPage(currentPage-1)"
+                [disabled]="currentPage===1">
+                < </button>
+        </li>
+
+        <li class="page-item">
+            <button class="page-link" (click)="getCurrentPage(currentPage+1)"
+                [disabled]="currentPage*perPage>=pageLengt">></button>
+
+        </li>
+    </ul>
+</nav>

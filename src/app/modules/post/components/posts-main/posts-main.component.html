@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col"> <app-post-filter [userIds]="userIds" [defaultFilterValue]="defaultFilterValue"
+                [search]="search" (changedSearch)="setSearchData($event)"
+                (changedFilter)="setFilterData($event)"></app-post-filter></div>
+    </div>
+    <div class="row">
+        <div class="col"><app-post-table [mappedPosts]="mappedPosts" ></app-post-table></div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <app-pagination [pageSize]="pageSize" [pageLengt]="pageLengt" [currentPage]="currentPage"
+                (currentPageChange)="onCurrentPageChanged($event)"
+                (currentPerPageChanged)="setCurrentPage($event)"></app-pagination>
+        </div>
+    </div>
+</div>
